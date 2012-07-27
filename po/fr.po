@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/unity-2d/+filebug\n"
+"POT-Creation-Date: 2012-04-10 10:59+0100\n"
+"PO-Revision-Date: 2012-03-28 12:46+0000\n"
+"Last-Translator: Adnane Belmadiaf <adnane002@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Launchpad-Export-Date: 2012-04-24 05:26+0000\n"
+"X-Generator: Launchpad (build 15135)\n"
+"Language: \n"
+
+#: shell/launcher/LauncherList.qml:90
+#, qt-format
+msgid "%1 window opened"
+msgid_plural "%1 windows opened"
+msgstr[0] "%1 fenêtre ouverte"
+msgstr[1] "%1 fenêtres ouvertes"
+
+#: shell/launcher/LauncherList.qml:93
+msgid "not running"
+msgstr "n'est pas lancé"
+
+#: shell/hud/Hud.qml:211
+msgid "Type your Command"
+msgstr "Tapez votre commande"
+
+#: shell/hud/Hud.qml:212
+msgid "Error: HUD service not connected"
+msgstr "Erreur : service affichage tête haute (HUD) non connecté"
+
+#: shell/dash/FilterPane.qml:71
+msgid "Filter results"
+msgstr "Filtrer les résultats"
+
+#: shell/dash/FilterLoader.qml:38
+#, qt-format
+msgid "Filter %1 active"
+msgstr "Filtre %1 actif"
+
+#: shell/dash/FilterLoader.qml:40
+#, qt-format
+msgid "Filter %1 inactive"
+msgstr "Filtre %1 inactif"
+
+#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
+msgid "All"
+msgstr "Tout"
+
+#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
+msgid "Search"
+msgstr "Rechercher"
+
+#: shell/dash/CategoryHeader.qml:37
+msgid "not expanded"
+msgstr "non étendu"
+
+#: shell/dash/CategoryHeader.qml:37
+msgid "expanded"
+msgstr "étendu"
+
+#: shell/dash/CategoryHeader.qml:93
+#, qt-format
+msgid "See %1 more result"
+msgid_plural "See %1 more results"
+msgstr[0] "Voir %1 résultat de plus"
+msgstr[1] "Voir %1 résultats de plus"
+
+#: shell/dash/CategoryHeader.qml:95
+msgid "See fewer results"
+msgstr "Voir moins de résultats"
+
+#: shell/dash/Home.qml:82
+msgid "Shortcuts"
+msgstr "Raccourcis"
+
+#: libunity-2d-private/src/launcherdevice.cpp:279
+msgid "Eject"
+msgstr "Éjecter"
+
+#: libunity-2d-private/src/launcherdevice.cpp:287
+msgid "Safely remove"
+msgstr "Retirer en toute sécurité"
+
+#: libunity-2d-private/src/application.cpp:1000
+msgid "Lock to Launcher"
+msgstr "Conserver dans le lanceur"
+
+#: libunity-2d-private/src/application.cpp:1000
+msgid "Unlock from Launcher"
+msgstr "Retirer du lanceur"
+
+#: libunity-2d-private/src/application.cpp:1007
+msgid "Quit"
+msgstr "Quitter"
+
+#: libunity-2d-private/src/bfb.cpp:69
+msgid "Dash home"
+msgstr "Tableau de bord"
+
+#. TRANSLATORS: This refers to the direction of text
+#. (left-to-right or right-to-left): possible values are LTR or RTL
+#: libunity-2d-private/src/unity2dapplication.cpp:173
+msgid "QT_LAYOUT_DIRECTION"
+msgstr "LTR"
+
+#: libunity-2d-private/src/lenses.cpp:45
+msgid "Home"
+msgstr "Accueil"
+
+#: libunity-2d-private/src/lenses.cpp:45
+msgid "Home screen"
+msgstr "Écran d’accueil"
+
+#: libunity-2d-private/src/trash.cpp:134
+msgid "Trash"
+msgstr "Corbeille"
+
+#: libunity-2d-private/src/trash.cpp:214
+#, c-format, qt-plural-format
+msgid "%n item in trash"
+msgid_plural "%n items in trash"
+msgstr[0] "%n élément dans la corbeille"
+msgstr[1] "%n éléments dans la corbeille"
+
+#: libunity-2d-private/src/trash.cpp:221
+msgid "Empty Trash"
+msgstr "Vider la corbeille"
+
+#: libunity-2d-private/src/lens.cpp:348
+msgid "Sorry, there is nothing that matches your search."
+msgstr "Désolé, aucun résultat ne correspond à votre recherche."
+
+#: libunity-2d-private/src/workspaces.cpp:79
+msgid "Workspaces"
+msgstr "Espaces de travail"
+
+#: panel/applets/appname/appnameapplet.cpp:368
+msgid "Ubuntu Desktop"
+msgstr "Bureau Ubuntu"
+
+#~ msgid "Browse the Web"
+#~ msgstr "Naviguer sur le Web"
+
+#~ msgid "Listen to Music"
+#~ msgstr "Écouter de la musique"
+
+#~ msgid "Find Files"
+#~ msgstr "Trouver des fichiers"
+
+#~ msgid "Check Email"
+#~ msgstr "Relever le courriel"
+
+#~ msgid "View Photos"
+#~ msgstr "Regarder des photos"
+
+#~ msgid "Media Apps"
+#~ msgstr "Applications multimédia"
+
+#~ msgid "More Apps"
+#~ msgstr "Plus d'applications"
+
+#~ msgid "Internet Apps"
+#~ msgstr "Applications Internet"
+
+#~ msgid "Keep in launcher"
+#~ msgstr "Conserver dans le lanceur"
+
+#~ msgid "Remove from launcher"
+#~ msgstr "Retirer du lanceur"

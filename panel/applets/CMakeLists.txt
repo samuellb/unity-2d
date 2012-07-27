@@ -1,0 +1,5 @@
+add_subdirectory(separator)
+add_subdirectory(appname)
+add_subdirectory(legacytray)
+add_subdirectory(indicator)
+add_subdirectory(appindicator)

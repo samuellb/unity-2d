@@ -1,0 +1,183 @@
+# Polish translation for unity-2d
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
+# This file is distributed under the same license as the unity-2d package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: unity-2d\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/unity-2d/+filebug\n"
+"POT-Creation-Date: 2012-04-10 10:59+0100\n"
+"PO-Revision-Date: 2012-03-08 17:39+0000\n"
+"Last-Translator: Bartosz Porosinski <Unknown>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2012-04-24 05:26+0000\n"
+"X-Generator: Launchpad (build 15135)\n"
+"Language: pl\n"
+
+#: shell/launcher/LauncherList.qml:90
+#, qt-format
+msgid "%1 window opened"
+msgid_plural "%1 windows opened"
+msgstr[0] ""
+msgstr[1] ""
+
+#: shell/launcher/LauncherList.qml:93
+msgid "not running"
+msgstr "nie uruchomiony"
+
+#: shell/hud/Hud.qml:211
+msgid "Type your Command"
+msgstr "Wprowadzanie polecenia"
+
+#: shell/hud/Hud.qml:212
+msgid "Error: HUD service not connected"
+msgstr "Błąd: nie połączono z usługą HUD"
+
+#: shell/dash/FilterPane.qml:71
+msgid "Filter results"
+msgstr "Filtrowanie wyników"
+
+#: shell/dash/FilterLoader.qml:38
+#, qt-format
+msgid "Filter %1 active"
+msgstr "Aktywny filtr %1"
+
+#: shell/dash/FilterLoader.qml:40
+#, qt-format
+msgid "Filter %1 inactive"
+msgstr "Nieaktywny filtr %1"
+
+#: shell/dash/FilterLoader.qml:86 shell/dash/FilterLoader.qml:92
+msgid "All"
+msgstr "Wszystko"
+
+#: shell/dash/Dash.qml:338 libunity-2d-private/src/lenses.cpp:45
+msgid "Search"
+msgstr "Wyszukiwanie"
+
+#: shell/dash/CategoryHeader.qml:37
+msgid "not expanded"
+msgstr "nie rozwinięty"
+
+#: shell/dash/CategoryHeader.qml:37
+msgid "expanded"
+msgstr "rozwinięty"
+
+#: shell/dash/CategoryHeader.qml:93
+#, qt-format
+msgid "See %1 more result"
+msgid_plural "See %1 more results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: shell/dash/CategoryHeader.qml:95
+msgid "See fewer results"
+msgstr "Wyświetl mniej wyników"
+
+#: shell/dash/Home.qml:82
+msgid "Shortcuts"
+msgstr "Skróty"
+
+#: libunity-2d-private/src/launcherdevice.cpp:279
+msgid "Eject"
+msgstr "Wysuń"
+
+#: libunity-2d-private/src/launcherdevice.cpp:287
+msgid "Safely remove"
+msgstr "Usuń bezpiecznie"
+
+#: libunity-2d-private/src/application.cpp:1000
+msgid "Lock to Launcher"
+msgstr "Dodaj do panelu uruchamiania"
+
+#: libunity-2d-private/src/application.cpp:1000
+msgid "Unlock from Launcher"
+msgstr "Usuń z panelu uruchamiania"
+
+#: libunity-2d-private/src/application.cpp:1007
+msgid "Quit"
+msgstr "Zakończ"
+
+#: libunity-2d-private/src/bfb.cpp:69
+msgid "Dash home"
+msgstr "Panel główny"
+
+#. TRANSLATORS: This refers to the direction of text
+#. (left-to-right or right-to-left): possible values are LTR or RTL
+#: libunity-2d-private/src/unity2dapplication.cpp:173
+msgid "QT_LAYOUT_DIRECTION"
+msgstr "LTR"
+
+#: libunity-2d-private/src/lenses.cpp:45
+msgid "Home"
+msgstr "Katalog domowy"
+
+#: libunity-2d-private/src/lenses.cpp:45
+msgid "Home screen"
+msgstr "Ekran główny"
+
+#: libunity-2d-private/src/trash.cpp:134
+msgid "Trash"
+msgstr "Kosz"
+
+#: libunity-2d-private/src/trash.cpp:214
+#, c-format, qt-plural-format
+msgid "%n item in trash"
+msgid_plural "%n items in trash"
+msgstr[0] "%n element w koszu"
+msgstr[1] "%n elementy w koszu"
+msgstr[2] "%n elementów w koszu"
+
+#: libunity-2d-private/src/trash.cpp:221
+msgid "Empty Trash"
+msgstr "Opróżnij kosz"
+
+#: libunity-2d-private/src/lens.cpp:348
+msgid "Sorry, there is nothing that matches your search."
+msgstr ""
+"Przepraszamy, nie odnaleziono żadnego elementu pasującego do wyszukiwanego "
+"wyrażenia."
+
+#: libunity-2d-private/src/workspaces.cpp:79
+msgid "Workspaces"
+msgstr "Obszary robocze"
+
+#: panel/applets/appname/appnameapplet.cpp:368
+msgid "Ubuntu Desktop"
+msgstr "Pulpit Ubuntu"
+
+#~ msgid "Browse the Web"
+#~ msgstr "Przeglądanie sieci"
+
+#~ msgid "Check Email"
+#~ msgstr "Sprawdzanie poczty e-mail"
+
+#~ msgid "View Photos"
+#~ msgstr "Przeglądanie obrazów"
+
+#~ msgid "Listen to Music"
+#~ msgstr "Posłuchaj muzyki"
+
+#~ msgid "Media Apps"
+#~ msgstr "Programy multimedialne"
+
+#~ msgid "Find Files"
+#~ msgstr "Wyszukiwanie plików"
+
+#~ msgid "Internet Apps"
+#~ msgstr "Programy internetowe"
+
+#~ msgid "More Apps"
+#~ msgstr "Więcej programów"
+
+#~ msgid "Keep in launcher"
+#~ msgstr "Pozostaw w obszarze uruchamiania"
+
+#~ msgid "Remove from launcher"
+#~ msgstr "Usuń z obszaru uruchamiania"

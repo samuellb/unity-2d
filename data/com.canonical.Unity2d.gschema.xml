@@ -1,0 +1,117 @@
+<schemalist>
+  <schema path="/com/canonical/unity-2d/" id="com.canonical.Unity2d" gettext-domain="unity-2d">
+    <key type="b" name="use-opengl">
+      <default>false</default>
+      <summary>Use OpenGL viewport.</summary>
+      <description>
+        Whether to render the graphics into an OpenGL viewport.
+        When set to false, the raster engine is used.
+      </description>
+    </key>
+    <key type="s" name="form-factor">
+      <default>"desktop"</default>
+      <summary>What sort of device Unity is running on.</summary>
+      <description>
+        Unity will adapt its shape and form to the device it is running on.
+      </description>
+    </key>
+    <key type="b" name="sticky-edges">
+      <default>true</default>
+      <summary>Sticky edges.</summary>
+      <description>Whether the edges in a multi-monitor setup should be sticky or not (Edges with autohide launchers are always sticky).</description>
+    </key>
+    <key type="s" name="average-bg-color">
+      <default>'#75507B'</default>
+      <summary>Average background color</summary>
+      <description>The average color derived from the currently set desktop-wallpaper.</description>
+    </key>
+  </schema>
+  <schema path="/com/canonical/unity-2d/launcher/" id="com.canonical.Unity2d.Launcher" gettext-domain="unity-2d">
+    <key type="b" name="super-key-enable">
+      <default>true</default>
+      <summary>Super key activation.</summary>
+      <description>Whether or not the super (also called windows key) key is used.</description>
+    </key>
+    <key name="hide-mode" type="i">
+      <default>0</default>
+      <summary>Hiding mode of the launcher</summary>
+      <description>Possible values:
+        0: never hide; the launcher is always visible and windows won't overlap with it
+        1: auto hide; the launcher will disappear after a short time if the user is not interacting with it
+        2: intellihide; same as auto hide but the launcher will disappear if a window is placed on top of it
+       </description>
+    </key>
+    <key type="i" name="reveal-mode">
+      <default>0</default>
+      <summary>Reveal mode</summary>
+      <description>Possible values:
+        0: Reveal the launcher by pushing the mouse against the left side of the screen (right in RTL)
+        1: Reveal the launcher by pushing the mouse against the top-left corner of the screen (top-right in RTL)
+       </description>
+    </key>
+    <key name="edge-responsiveness" type="d">
+      <default>2</default>
+      <summary>Responsiveness of the Launcher</summary>
+      <description>How quickly the Launcher will reveal when you push the pointer against the 
+        monitor edge
+      </description>
+    </key>
+    <key name="edge-decayrate" type="i">
+      <default>1500</default>
+      <summary>Decay rate of mouse pressure against barrier</summary>
+      <description>The pressures against the monitor edge are continually added up, and when the sum
+        hits a certain threshold the launcher reveals. To prevent a series of distinct gentle pushes  
+        of the pointer against the barrier from causing the launcher to reveal, we substract this  
+        parameter - the decay rate - at a steady rate
+      </description>
+    </key>
+    <key name="edge-reveal-pressure" type="i">
+      <default>2000</default>
+      <summary>Launcher reveal edge pressure</summary>
+      <description>The minimum pressure to press the pointer against the monitor edge to 
+        cause the launcher to reveal
+      </description>
+    </key>
+    <key name="edge-stop-velocity" type="i">
+      <default>6500</default>
+      <summary>Barrier edge stop velocity</summary>
+      <description>The minimum velocity the pointer needs to travel to pass through the barrier without 
+        any resistance. Only relevant for multi-monitor setups
+      </description>
+    </key>
+    <key name="edge-overcome-pressure" type="i">
+      <default>2000</default>
+      <summary>Barrier edge overcome pressure
+      </summary>
+      <description>Minimum pressure the pointer needs to exert on the barrier for the barrier to drop.
+        Only relevant for multi-monitor setups
+      </description>
+    </key>
+    <key type="b" name="only-one-launcher">
+      <default>true</default>
+      <summary>Show only one launcher.</summary>
+      <description>Whether in a multi-monitor setup there should be just one launcher in the primary screen or one in each.</description>
+    </key>
+  </schema>
+  <schema path="/com/canonical/unity-2d/panel/" id="com.canonical.Unity2d.Panel" gettext-domain="unity-2d">
+    <key type="as" name="applets">
+      <default>["appname", "!legacytray", "indicator"]</default>
+      <summary>Applets to display in the panel</summary>
+      <description>
+        List of panel applets that should be displayed, in order, in the panel.
+        Each applet name can be annotated with the prefix "!" to force that applet to be displayed
+        only on the panel living in the leftmost screen.
+      </description>
+    </key>
+  </schema>
+  <schema path="/com/canonical/unity-2d/dash/" id="com.canonical.Unity2d.Dash" gettext-domain="unity-2d">
+    <key type="b" name="full-screen">
+      <default>false</default>
+      <summary>The current fullscreen status of the dash</summary>
+      <description>
+        Describe if the dash should be fullscreen or not. If the dash is already running this setting
+        is applied immediately, otherwise it is applied as soon as the dash is activated again.
+      </description>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,48 @@
+----
+ * Hit Alt key
+ * Enter a few characters
+ 
+--> Check HUD offers results
+--> Navigate through them with keyboard arrow keys & mouse
+--> check tile is updated to reflect the app/indicator listed
+--> click on one and ensure the action is performed
+--> Check HUD closes
+
+----
+ * Enable Accessibility and Orca speech output
+ * Tap Alt key
+ * Enter a few characters
+--> Check that Orca speaks the contents of the first highlighted item
+ * Use Up/Down keys to navigate through the options returned and Left/Right to move over search query
+--> Check that Orca speaks the contents of the results as they are browsed with Up/Down
+--> Check that cursor keeps blinking in the search entry.
+--> Check that Orca speaks search query letters as you move the caret Left/Right
+
+----
+ * Go into ccsm
+ * Change Key to Show HUD to Super+Alt
+--> Verify Super+Alt shows the HUD
+
+----
+ * Go into ccsm
+ * Change Key to Show HUD to Super+Alt
+--> Verify Super+Alt shows the HUD
+
+----
+ * Have a fixed launcher
+ * Find a program without icon (i.e. uses the ? icon) (dconf-editor works here)
+ * Show and hide the hud
+--> Verify the BFB icon goes back to the ubuntu logo and does not get stuck in ?
+
+----
+ * Have two monitors
+ * Set the launcher to not autohide and be shown only on one monitor
+ * Toggle the hud on the monitor that does not have launcher
+--> Verify the hud shows on the left edge of the monitor and with icon
+
+----
+ * Open an application
+ * Hit Alt key
+ * Navigate through results with keyboard arrow keys
+ * Navigate to a result row different than the top one
+ * Hit Enter to activate an action

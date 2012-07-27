@@ -1,0 +1,51 @@
+----
+ * Hit Alt-F10.
+
+--> Panel main menu should be activated. The shortcut key F10 is changed to Alt-F10 now (lp:878492)
+
+----
+ * Open any indicator menu
+
+--> Verify menu shows correctly and there are no scroll arrows (lp:913237)
+
+----
+ * Hit super key to Open Dash.
+
+--> Verify top panel is transparent
+----
+ * Have a two monitor setup in a side by side configuration
+ * Open a program and move its window to the rightmost monitor
+ * Make sure that window is the active one
+ * Click on the indicators in the panel of the rightmost monitor
+ * While the indicators menu is open, move the mouse to the left over the menu area of the rightmost monitor
+
+--> Verify menu appears
+
+----
+ * Launch a program that creates problems to unity-2d-panel (in my case tdriver_visualizer)
+--> Verify the panel is not empty (should say TDriver Visualizer bla bla)
+
+----
+ * Have no application windows open
+ * Verify 'Ubuntu Desktop' caption is displayed on the panel
+ * Move mouse over over it.
+ * Verify desktop menu is displayed, containing subset of Nautilus menu items + special items (e.g. Edit > Change Desktop Background).
+ * Open an application
+ * Verify that application menu replaces desktop menu when application has focus.
+ * Click on the desktop.
+ * Verify that desktop menu is available again when mouse is over it.
+----
+ * Have two monitors of exact same resolution side by side
+ * Have launcher set in autohide mode
+ * Get a firefox window to occupy the total width of the two screens
+ * Open a menu item in the first screen
+ * Verify the menu shows in the first screen and not in the second
+----
+ * Open a window fullscreen (e.g. firefox)
+ * Go to the panel and press and hold the [x] button and be sure not to move the mouse
+ * Press the Print Screen key on the keyboard
+ * See how the "Save Screenshot" app appears
+ * See how the [x] button in the panel disappears
+ * Release the mouse button
+ * Verify the "Save Screenshot" app does not close
+----

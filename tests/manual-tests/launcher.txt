@@ -1,0 +1,169 @@
+----
+ * Mouse over a tile in the launcher (which displays tooltip). 
+ * Press Super+S
+
+-> Tooltip disappears, spread appears (lp:881458)
+
+----
+ * Have Launcher hidden. 
+ * Bring mouse over panel
+ * Move it directly to the left, so it stays over panel
+
+-> Launcher stays hidden - it should not reveal (lp:891636)
+
+----
+ * RTL: Open Dash
+ * perform a simple search
+ * click on an application icon
+
+-> Application launches - should not crash (lp:836498)
+
+----
+ * Press Alt-F1
+
+-> Launcher revealed with Dash button focused - Pressing Alt-F1 again should toggle the focus between launcher and applications (lp:885304)
+
+----
+ * Launcher visible, scrolled down, hit Super
+
+-> Launcher reposition to beginning - and its tooltips/menus should hide. (lp:876632)
+
+----
+ * Press Alt-F1, select the trash icon using the keyboard.
+
+-> Trash icon gets highlighted - The highlight effect should not be truncated on top and bottom (lp:876589)
+
+----
+ * Launch an application. Open the context menu of the same application tile in launcher. Hit Alt-F4
+
+-> The visible context is updated - closing the application should be notified in launcher menu(lp:784541)
+
+----
+ * Right-click on a non running application tile in the launcher. Click the "Unlock from Launcher" option.
+
+-> Launcher is still shown for a while - it should not close immediately  (lp:884410)
+
+----
+ * Press Right Mouse Button over an application tile in the launcher. Do not release.
+
+-> Menu is shown - it should not show on button release (lp:813036)
+
+----
+ * Press Right Mouse Button over an application tile in the launcher, do not release, move mouse up/down
+
+-> Launcher does not scroll (lp:813041)
+
+----
+ * Press Left Mouse Button over an application tile in the launcher, do not release
+ * Move mouse up/down, release Left Mouse Button
+ * while the icons are going back to their original position press Right Mouse Button and try to continue the dragging
+
+-> Launcher keeps going back to its original position - you should not be able to continue a dragging with Right Mouse Button
+
+----
+ * Have the Launcher hidden. Move the mouse over the panel. Move mouse to the left edge the panel.
+
+-> Launcher is not revealed - moving the cursor in the top left corner of the panel shouldn't reveal launcher(lp:891636)
+
+----
+ * Start the launcher with a maximized window under it. 
+ * Watch the launcher autohide. 
+ * Alt+Tab to another maximized window. 
+ * Move the mouse to the leftmost part of the screen. 
+ * Watch launcher show. 
+ * Keeping the mouse at the leftmost part of the screen move to the top panel. 
+ * Wait one second
+
+-> Launcher is hidden - The launcher should not still be visible when you have the mouse on the top panel (lp:892004)
+
+----
+ 
+ * Drag a file(example .txt) onto a tile(gedit) in the launcher
+
+--> The application should be launched - Launch the application, if it can handle the file(s) dragged and Open the files.  If the application can't handle the files then ignore the drag-n-drop action. (lp:676549)
+
+----
+
+ * Reveal launcher
+ * Place mouse over a tile whose application is running
+
+--> Tooltip appears - The tooltip should be displayed at the center of the tile. (lp:898349)
+
+----
+
+ * Show the desktop (Ctrl+Alt+D ?) 
+
+The panel title Ubuntu Desktop is shown - The desktop title is changed from 'Desktop to 'Ubuntu Desktop'(lp:869873)
+
+----
+
+ * Enable dragging and dropping of files & folders to Launcher tiles
+
+Draging and droping a file/folder over a tile should launch that application, if it can handle such data. for eg: gedit
+can handle plain/text. If the application can't handle data, no action taken (lp:676549)
+If the drag is acceptable, mouse cursor will have a '+' sign. but this feedback seems
+to take one second time to update.
+
+----
+
+ * In a multimonitor environment, set launcher to always show and to show in only one screen
+
+Verify there is no strut in the rest of screens where the launcher would be
+----
+
+ * In a 64 bit machine (32 bit seems not affected, at least in a VM) add lots of favorites to the launcher (at least 22)
+
+Verify that the shell starts without problems (does not segfault) (Do it multiple times since there's the odd time it works)
+----
+
+ * Use hide-mode 1. killall both unity-2d-shell and unity-2d-spread. Start only the shell. Click twice on the launcher spread icon. Move the mouse away from the launcher
+
+Verify that the launcher hides correctly
+----
+
+ * Open the launcher. Put the mouse at the position of a tile where the right pip appears (to the right of the icon itself)
+
+Verify that the tooltip appears and does not enter an infinite flickering loop
+----
+
+ * Use hide-mode 0. Open the software-center. Start (just until the passowrd is asked, no need to continue) installing an app (I tried Kalzium)
+
+Verify that the tile that appears in the launcher has the app icon and not the questionmark icon
+----
+
+ * Have a multimonitor setup
+ * Run unity-2d-shell in RTL
+ * Have launchers in both screens
+
+Verify that the tile tooltips appear in the correct screen
+----
+ * Alt+f1 to show launcher
+ * move down with arrow key
+ * press enter to start/focus a program (firefox works particulary well due to its red background)
+ * press Alt+f1 again
+
+Verify that the tile of the program you started (e.g. firefox) does not have the background highlighted
+----
+ * Do a big file copy in nautilus
+
+Verify that the progress bar appears and that the filler looks correctly centered inside the bar
+----
+ * Launch an application whose icon uses 24 bit per pixel instead of 32 (e.g. kmag in precise)
+
+Verify that the icon shows correctly in the launcher
+----
+ * Have the launcher in always shown mode
+ * Have the launcher with more items that it can hold in screen (i.e. it is scrollable)
+ * Put the mouse in the area of the launcher that makes it autoscroll down (and don't move it for the rest of the test)
+ * Open a program that is not in the launcher (so it creates a new tile in the launcher)
+ * Verify launcher autoscrolls down
+ * Quit the program you just started
+
+Verify that the launcher autoscrolls up (and does not crash)
+----
+ * Have a multimonitor setup
+ * On primary screen, open dash
+ * Drab an application icon and drop it onto the launcher beside it
+
+Verify Application tile created for that application in all launchers
+----

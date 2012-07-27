@@ -1,0 +1,251 @@
+----
+ * Hit super key to Open Dash.
+
+--> Dash have window buttons to maximize/unmaximize - Clicking on maximize/unmaximize 
+    button should toggle the dash mode between full-screen and netbook mode. If display is 
+    small, Dash should be locked to full-screen mode. (lp:860400)
+
+----
+ * Newly installed Ubuntu, first boot to Unity 2D session
+ * No applications have yet started or windows appear
+ * Click the BFB in the Launcher *OR* Tap Alt to open HUD
+
+--> Shell should not crash. (lp:944724)
+
+----
+ * Press Alt+F2
+
+--> Dash opens and "Run a command" is shown in the search field - (lp:883392)
+
+----
+
+ * Hit super key to Open Dash, select the file lens and press right arrow key
+
+--> The text "Filter results" gets highlighted and no underline is shown. (lp:893061)
+
+----
+
+ * Open Dash, hover mouse over Search Entry box
+
+--> The mouse cursor should change to the I-beam cursor over the Search box, and be standard
+    cursor elsewhere.
+
+----
+
+  # Test case objectives:
+  #   * Check that Super+s does not type s in the search line
+  # Pre-conditions
+  #   * Desktop with no running applications
+  # Test steps
+  #   * Verify dash is not showing
+  #   * Press Alt+F2
+  #   * Verify dash is showing
+  #   * Verify there is no text in the search line
+  #   * Press Super+s
+  #   * Verify there is no text in the search line
+  # Post-conditions
+  #   * None
+  # References
+  #   * There is a test case for this called "Super+s does not type s"
+  #     but it does not work realiably because of the reasons explained
+  #     in the dash-tests.rb file
+
+----
+
+  # Test case objectives:
+  #   * Check that filters rating is clamped
+  # Pre-conditions
+  #   * Desktop with no running applications
+  # Test steps
+  #   * Verify dash is not showing
+  #   * Press Super
+  #   * Go to the search applications lens
+  #   * Make sure filtering is enabled
+  #   * Go to the Rating stars with the keyboard navigation
+  #   * Use Left and Right keyboard arrows to verify 1 and 5 are the maximum stars
+  #     that you can get highlighted
+  # Post-conditions
+  #   * None
+  # References
+  #   * None
+
+----
+
+  # Test case objectives:
+  #   * Check maximizing/unmaximizing does not leave graphic noise on screen
+  # Pre-conditions
+  #   * Desktop with no running applications
+  # Test steps
+  #   * Verify dash is not showing
+  #   * Press Super
+  #   * Verify dash is showing
+  #   * Press the maximize button in the panel
+  #   * Verify dash is showing maximized
+  #   * Press the maximize button in the panel
+  #   * Verify dash is showing normal
+  #   * Verify there is no graphic noise left on screen
+
+----
+  # Test case objectives:
+  #   * Check that dash fullscreen mode is forced on small screens
+  # Pre-conditions
+  #   * Small screen (anything less than 1280x1084), e.g. 1024x768
+  #   * form-factor dconf option set to "desktop"
+  #   * full-screen dconf option for dash is unset
+  # Test steps
+  #   * Verify dash is not showing
+  #   * Press Super
+  #   * Verify dash is showing maximized
+  #   * Verify that pressing dash maximize button has no effect (dash stays in maximized mode).
+
+-----
+
+  # Test case objectives:
+  #   * Check that search query is applied to lenses on lens change
+  # Pre-conditions
+  #   * None
+  # Test steps
+  #   * Open dash
+  #   * Enter a search query
+  #   * Switch between lenses and verify that search query is applied to all lenses.
+  #   * Enter the same search query manually on every lens page - the results should be more less the same as in previous step.
+  #   * Close dash
+  #   * Open dash and verify that all results are displayed in 'Home' lens, and no search query is applied.
+
+-----
+
+  # Test case objectives:
+  #   * Check that remote icons show in the dash
+  # Pre-conditions
+  #   * None
+  # Test steps
+  #   * Open dash
+  #   * Go to the music lens
+  #   * Type some song you don't have on the local computer and that is on the music store
+  #   * Verify the results have the cover of the song/album and not the ? icon
+
+-----
+
+  # Test case objectives:
+  #   * Check that Tab moves between headers on the dash
+  # Pre-conditions
+  #   * Have a files and folders lens with 3 categories
+  # Test steps
+  #   * Open dash
+  #   * Switch to the files and folders lens
+  #   * Verify focus is on the search entry
+  #   * Press Tab
+  #   * Verify focus is on the first category header
+  #   * Press Tab
+  #   * Verify focus is on the second category header
+  #   * Press Tab
+  #   * Verify focus is on the third category header
+  #   * Press Tab
+
+-----
+
+  # Test case objectives:
+  #   * Check that Tab moves between headers and Filters on the dash
+  # Pre-conditions
+  #   * Have a files and folders lens with 3 categories
+  #   * Have the focus on the third header of files and folders lens 
+  #   * Have the filters collapsed
+  # Test steps
+  #   * Verify focus is on the "Filter results" text
+  #   * Press Tab
+  #   * Verify focus is on the first category header
+
+-----
+
+  # Test case objectives:
+  #   * Check that Tab moves between Filters "All" buttons
+  # Pre-conditions
+  #   * Be on the files and folders lens
+  #   * Have the focus on the "Filter results" text
+  #   * Have the filters collapsed
+  # Test steps
+  #   * Verify focus is on the "Filter results" text
+  #   * Press Enter to expand the filters
+  #   * Press Tab
+  #   * Verify focus is on the "Last Modified" filter "All" button
+  #   * Press Tab
+  #   * Verify focus is on the "Type" filter "All" button
+  #   * Press Tab
+  #   * Verify focus is on the "Size" filter "All" button
+  #   * Press Tab
+  #   * Verify focus is on the first category header
+
+-----
+
+  # Test case objectives:
+  #   * Check that Tab goes to the next category header when not on the header
+  # Pre-conditions
+  #   * Be on the files and folders lens
+  #   * Have the focus on the first category header
+  # Test steps
+  #   * Press Down Arrow
+  #   * Verify focus is on the first element of the first category
+  #   * Press Tab
+  #   * Verify focus is on the second category header
+
+-----
+
+  # Test case objectives:
+  #   * Check that Shift+Tab goes to the current category header
+  # Pre-conditions
+  #   * Be on the files and folders lens
+  #   * Have the focus on the first category header
+  # Test steps
+  #   * Press Down Arrow
+  #   * Verify focus is on the first element of the first category
+  #   * Press Shift+Tab
+  #   * Verify focus is on the first category header
+
+-----
+
+  # Test case objectives:
+  #   * Check that Shift+Tab cycles through category headers and filters
+  # Pre-conditions
+  #   * Be on the files and folders lens
+  #   * Have the filters uncollapsed
+  #   * Have the focus on the third category header
+  # Test steps
+  #   * Press Shift+Tab
+  #   * Verify focus is on the second category header
+  #   * Press Shift+Tab
+  #   * Verify focus is on the first category header
+  #   * Press Shift+Tab
+  #   * Verify focus is on the "Size" filter "All" button
+  #   * Press Shift+Tab
+  #   * Verify focus is on the "Type" filter "All" button
+  #   * Press Shift+Tab
+  #   * Verify focus is on the "Last Modified" filter "All" button
+  #   * Press Shift+Tab
+  #   * Verify focus is on the "Filter results" text
+  #   * Press Shift+Tab
+  #   * Verify focus is on the third category header
+
+-----
+
+# Test case objectives:
+  #   * Verify the 4 finger tap gesture toggles the dash
+  # Pre-conditions
+  #   * None
+  # Test steps
+  #   * Use the 4 finger tap gesture to open the dash
+  #   * Use the 4 finger tap gesture to close the dash
+
+-----
+
+# Test case objectives:
+  #  * Ensure all video lens entries open correctly
+  # Pre-conditions
+  #   * None
+  # Test steps
+  #   * Open Dash
+  #   * Select the video lens
+  #   * Expand the 'Online' scope  
+  #   * Click on videos supplied by all providers, especially Youtube and Amazon
+  #   * Verify video opens correctly in web browser
+
+-----
