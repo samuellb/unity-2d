@@ -743,16 +743,18 @@ Application::activate()
         /* Always show urgent window, even if it's on another workspace */
         show();
     } else if (active()) {
-        /* Send window to back, switch to MRU workspace.
-           Useful for e.g. e-mail applications, which are typically used
-           very frequently but should interfere as little as possible
-           with the work flow. */
-        /* TODO */
-        
-        /* For now, we just show the spread like stock Unity does */
         if (windowCountOnCurrentWorkspace() > 0 && windowCount() > 1) {
+            /* Multiple windows. Show the spread like stock Unity does */
             spread(windowCount() > windowCountOnCurrentWorkspace());
         }
+        
+        /* TODO need to handle applications where only one instance makes
+           sense. In this case we should send the window back and go to the
+           last used window.
+           
+           This is useful for e.g. e-mail applications, which are typically
+           used very frequently but should interfere as little as possible
+           with the work flow. */
         
     } else if (windowCountOnCurrentWorkspace() > 0) {
         /* On current workspace, but not active. Bring it to front */
@@ -760,6 +762,7 @@ Application::activate()
     } else if (running()) {
         /* No window on current workspace. Most likely the user has started
            using a new workspace without any applications. */
+        /* TODO need to handle applications where only one instance makes sense, e.g. e-mail */
         launchNewInstance();
     } else {
         launch();
