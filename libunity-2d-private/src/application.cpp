@@ -740,13 +740,27 @@ void
 Application::activate()
 {
     if (urgent()) {
+        /* Always show urgent window, even if it's on another workspace */
         show();
     } else if (active()) {
+        /* Send window to back, switch to MRU workspace.
+           Useful for e.g. e-mail applications, which are typically used
+           very frequently but should interfere as little as possible
+           with the work flow. */
+        /* TODO */
+        
+        /* For now, we just show the spread like stock Unity does */
         if (windowCountOnCurrentWorkspace() > 0 && windowCount() > 1) {
             spread(windowCount() > windowCountOnCurrentWorkspace());
         }
-    } else if (running() && has_visible_window()) {
+        
+    } else if (windowCountOnCurrentWorkspace() > 0) {
+        /* On current workspace, but not active. Bring it to front */
         show();
+    } else if (running()) {
+        /* No window on current workspace. Most likely the user has started
+           using a new workspace without any applications. */
+        launchNewInstance();
     } else {
         launch();
     }
@@ -840,27 +854,43 @@ Application::show()
         return;
     }
 
-    /* Pick the most important window.
+    WnckScreen* screen = wnck_screen_get_default();
+    wnck_screen_force_update(screen);
+
+    /* Pick the most important window on the active workspace.
+
        The primary criterion to determine the most important window is urgency.
        The secondary criterion is the last_active timestamp (the last time the
-       window was activated). */
-    BamfWindow* important = windows->at(0);
+       window was activated).
+    */
+    BamfWindow* important = NULL;
     for (int i = 0; i < size; ++i) {
         BamfWindow* current = windows->at(i);
-        if (current->urgent() && !important->urgent()) {
+
+        /* Ignore windows on other workspaces */
+        WnckWindow* window = wnck_window_get(current->xid());
+        if (!wnck_window_is_on_workspace(window, wnck_screen_get_active_workspace(screen)) && !wnck_window_is_pinned(window)) {
+            continue;
+        }
+
+        if (!important) {
+            /* First window */
+            important = current;
+        } else if (current->urgent() && !important->urgent()) {
+            /* More urgent */
             important = current;
         } else if (current->urgent() || !important->urgent()) {
+            /* More recently used */
             if (current->last_active() > important->last_active()) {
                 important = current;
             }
         }
     }
 
-    WnckScreen* screen = wnck_screen_get_default();
-    wnck_screen_force_update(screen);
-
-    WnckWindow* window = wnck_window_get(important->xid());
-    LauncherUtility::showWindow(window);
+    if (important) {
+        WnckWindow* window = wnck_window_get(important->xid());
+        LauncherUtility::showWindow(window);
+    }
 }
 
 void
