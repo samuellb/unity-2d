@@ -1,3 +1,18 @@
+Modifications in samuellb's version
+===================================
+
+The original Unity does not work well when you want to use the same
+applications in multiple workspaces. This modified version makes it behave
+more like other DEs:
+
+ * Clicking a launcher item in a new workspace always launches the application
+   instead of switching back to the old workspace.
+ * Launcher items are only visible in the workspaces where the application is
+   running.
+ * The animation when an item is added has been disabled. I find it more
+   annoying than useful, and it also didn't play well with my modifications.
+
+
 Compiling Unity 2D
 ==================
 
