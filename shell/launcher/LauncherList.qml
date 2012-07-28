@@ -96,6 +96,12 @@ AutoScrollingListView {
                 return "%1".arg(item.name)
             }
         }
+        
+        function shouldBeVisible() {
+            var windowCount = item.windowsOnCurrentWorkspaceScreen(launcher2dConfiguration.onlyOneLauncher ? -1 : declarativeView.screen.screen);
+            return windowCount != 0 || item.sticky ||
+                   item.windowCount == 0; // special item
+        }
 
         function updatePips() {
             var windowCount = item.windowsOnCurrentWorkspaceScreen(launcher2dConfiguration.onlyOneLauncher ? -1 : declarativeView.screen.screen);
@@ -107,11 +113,27 @@ AutoScrollingListView {
                 launcherItem.pips = Math.min(windowCount, 3)
                 launcherItem.pipSource = ("launcher/artwork/launcher_" + ((pips <= 1) ? "arrow" : "pip") + "_ltr.png")
             }
+            
+            // the visible property does not work
+            // XXX should make hidden items not able to receive focus
+            if (shouldBeVisible()) {
+                launcherItem.height = selectionOutlineSize
+                launcherItem.scale = 1
+                launcherItem.clip = false
+                launcherItem.transform = {x:0, y:0}
+                //launcherItem.visible = false
+            } else {
+                launcherItem.height = 7
+                launcherItem.scale = 0.0
+                launcherItem.clip = true
+                launcherItem.transform = {x:-20, y:0}
+                //launcherItem.visible = true
+            }
         }
 
         Accessible.name: accessibleDescription()
         name: item.name
-
+        
         width: list.width
         tileSize: list.tileSize
         selectionOutlineSize: list.selectionOutlineSize
@@ -292,12 +314,14 @@ AutoScrollingListView {
             }
         }
 
-        ListView.onAdd: SequentialAnimation {
+        // XXX disabled because it was unreliable (and IMO it's more usable without the animation anyway)
+/*        ListView.onAdd: SequentialAnimation {
             PropertyAction { target: launcherItem; property: "scale"; value: 0 }
             NumberAnimation { target: launcherItem; property: "height";
                               from: 0; duration: 250; easing.type: Easing.InOutQuad }
-            NumberAnimation { target: launcherItem; property: "scale"; to: 1; duration: 250; easing.type: Easing.InOutQuad }
-        }
+            NumberAnimation { target: launcherItem; property: "scale"; to: shouldBeVisible() ? 1 : 0; duration: 250; easing.type: Easing.InOutQuad }
+            PropertyAction { target: launcherItem; property: "scale"; value: shouldBeVisible() ? 1 : 0 } // XXX not 100% reliable
+        }*/
 
         ListView.onRemove: SequentialAnimation {
             /* Disable all mouse interactions on the delegate being removed. This prevents a bug where QT itself
