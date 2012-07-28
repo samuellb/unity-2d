@@ -502,7 +502,7 @@ void
 Application::setSnStartupSequence(SnStartupSequence* sequence)
 {
     if (sequence != NULL) {
-        if (!sn_startup_sequence_get_completed(sequence)) {
+        if (!sn_startup_sequence_get_completed(sequence) && !running()) {
             /* 'launching' property becomes true for a few seconds */
             m_launching_timer.start();
         } else {
@@ -779,6 +779,7 @@ Application::launch()
         return false;
     }
 
+    bool was_running = m_application != NULL;
     GError* error = NULL;
 
     GdkWindow* root;
@@ -805,10 +806,12 @@ Application::launch()
         return false;
     }
 
-    /* 'launching' property becomes true for a few seconds and becomes
-       false as soon as the application is launched */
-    m_launching_timer.start();
-    launchingChanged(true);
+    if (!was_running) {
+        /* 'launching' property becomes true for a few seconds and becomes
+           false as soon as the application is launched */
+        m_launching_timer.start();
+        launchingChanged(true);
+    }
 
     return true;
 }
