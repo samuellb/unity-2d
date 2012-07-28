@@ -100,8 +100,9 @@ AutoScrollingListView {
         function updatePips() {
             var windowCount = item.windowsOnCurrentWorkspaceScreen(launcher2dConfiguration.onlyOneLauncher ? -1 : declarativeView.screen.screen);
             if (windowCount == 0 && item.windowCount != 0) {
-                launcherItem.pips = 1
-                launcherItem.pipSource = "launcher/artwork/launcher_arrow_outline_ltr.png";
+                // hide arrow
+                launcherItem.pips = 0
+                launcherItem.pipSource = "launcher/artwork/launcher_arrow_outline_ltr.png"; // not used
             } else {
                 launcherItem.pips = Math.min(windowCount, 3)
                 launcherItem.pipSource = ("launcher/artwork/launcher_" + ((pips <= 1) ? "arrow" : "pip") + "_ltr.png")
